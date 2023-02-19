@@ -7,19 +7,27 @@ class GUI {
 
     void tools()
     {
-        JToolBar toolBar = new JToolBar();
+        JToolBar toolbar = new JToolBar();
 
         // On button click open Popup()
-        JButton button1 = new JButton("Pay Bill");
-        JButton button2 = new JButton("Pay Bill2");
-        JButton button3 = new JButton("Pay Bill3");
+        JButton InfoBtn = new JButton("Information");
+        JButton UserBtn = new JButton("User");
+        JButton ReportBtn = new JButton("Report");
+        JButton LogoutBtn = new JButton("Log Out");
 
-        toolBar.add(button1);
-        toolBar.add(button2);
-        toolBar.add(button3);
+        toolbar.add(InfoBtn);
+        toolbar.addSeparator();
+        toolbar.add(UserBtn);
+        toolbar.addSeparator();
+        toolbar.add(ReportBtn);
+        toolbar.addSeparator();
+        toolbar.add(LogoutBtn);
 
-        Container contentPane = home.getContentPane();
-        contentPane.add(toolBar, BorderLayout.NORTH);
+        // What is content pane?
+        // The content pane is the container that holds the components of a window.
+        // The content pane is the only child of the window object.
+        Container contentPane = home.getContentPane();   // Get the content pane of the frame
+        contentPane.add(toolbar, BorderLayout.NORTH);
     }
 
     void mainWindow()
