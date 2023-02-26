@@ -1,4 +1,5 @@
-package electricity_billing_syatem;
+// package electricity_billing_syatem.src;
+package electricity_billing_syatem.src;
 
 import javax.swing.*;
 import java.awt.*;
@@ -64,9 +65,9 @@ public class Login extends JFrame {
         logginin.setBounds(250, 150, 200, 30);
 
         // Set Background Color for Buttons
-        btnlogin.setBackground(Color.BLACK);
-        btncancel.setBackground(Color.BLACK);
-        btnsignup.setBackground(Color.BLACK);
+        btnlogin.setBackground(Color.DARK_GRAY);
+        btncancel.setBackground(Color.DARK_GRAY);
+        btnsignup.setBackground(Color.DARK_GRAY);
 
         // Set Foreground Color for Buttons
         btnlogin.setForeground(Color.WHITE);

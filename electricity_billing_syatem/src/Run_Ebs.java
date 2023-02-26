@@ -1,25 +1,24 @@
-package electricity_billing_syatem;
+package electricity_billing_syatem.src;
 
 import javax.swing.*;
 import java.awt.*;
 
-class GUI {
+class Run_Ebs {
     JFrame home;
 
-    GUI()
+    Run_Ebs()
     {
         home = new JFrame("Electricity Billing System");
         home.setExtendedState(JFrame.MAXIMIZED_BOTH);
         home.setLayout(null);
-        home.getContentPane().setBackground(Color.WHITE);
+        home.getContentPane().setBackground(Color.LIGHT_GRAY);
         home.setVisible(true);
         home.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        // new tools();
         new Login();
     }
 
     public static void main(String[] args) 
     {
-        new GUI();
+        new Run_Ebs();
     }
 }

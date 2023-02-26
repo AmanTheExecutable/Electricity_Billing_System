@@ -1,4 +1,4 @@
-package electricity_billing_syatem;
+package electricity_billing_syatem.src;
 
 import javax.swing.*;
 import java.awt.*;
