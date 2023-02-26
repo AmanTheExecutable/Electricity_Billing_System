@@ -1,15 +1,16 @@
-import java.io.*;
+package electricity_billing_syatem;
+
 import javax.swing.*;
 import java.awt.*;
 
-class GUI {
-    JFrame home;
-
-    void tools()
+public class tools extends JFrame {
+    tools()
     {
-        JToolBar toolbar = new JToolBar();
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
+        setVisible(true);
 
-        // On button click open Popup()
+        JToolBar toolbar = new JToolBar();
+        
         JButton InfoBtn = new JButton("Information");
         JButton UserBtn = new JButton("User");
         JButton ReportBtn = new JButton("Report");
@@ -26,21 +27,12 @@ class GUI {
         // What is content pane?
         // The content pane is the container that holds the components of a window.
         // The content pane is the only child of the window object.
-        Container contentPane = home.getContentPane();   // Get the content pane of the frame
+        Container contentPane = getContentPane();   // Get the content pane of the frame
         contentPane.add(toolbar, BorderLayout.NORTH);
-    }
-
-    void mainWindow()
-    {
-        home = new JFrame("Electricity Billing System");
-        tools();
-        home.setExtendedState(JFrame.MAXIMIZED_BOTH);
-        home.setVisible(true);  
-        home.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  
     }
 
     public static void main(String[] args) 
     {
-        new GUI().mainWindow();
+        new tools();
     }
 }
