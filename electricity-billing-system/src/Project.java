@@ -4,6 +4,7 @@ import java.awt.event.*;
 
 public class Project extends JFrame implements Custom,ActionListener {
     JFrame home;
+    String atype, meter;
     Project()
     {
         home = new JFrame("Electricity Billing System");
@@ -45,8 +46,6 @@ public class Project extends JFrame implements Custom,ActionListener {
         // Create menu items
         JMenuItem newcustomer = new JMenuItem("New Customer");
         newcustomer.addActionListener(this);
-        // newcustomer.setBackground(Color.BLACK);
-        // newcustomer.setForeground(Color.WHITE);
         newcustomer.setBorder(BorderFactory.createEmptyBorder(0,0,0,0));
         newcustomer.setFont(new Font("Tahoma",Font.BOLD,13));
         masterMenu.add(newcustomer);
@@ -61,8 +60,6 @@ public class Project extends JFrame implements Custom,ActionListener {
         
         JMenuItem depositdetails = new JMenuItem("Deposit Details");
         depositdetails.addActionListener(this);
-        // depositdetails.setBackground(Color.BLACK);
-        // depositdetails.setForeground(Color.WHITE);
         depositdetails.setBorder(BorderFactory.createEmptyBorder(0,0,0,0));
         depositdetails.setFont(new Font("Tahoma",Font.BOLD,13));
         masterMenu.add(depositdetails);
@@ -116,8 +113,6 @@ public class Project extends JFrame implements Custom,ActionListener {
 
         JMenuItem paybill = new JMenuItem("Pay Bill");
         paybill.addActionListener(this);
-        // paybill.setBackground(Color.BLACK);
-        // paybill.setForeground(Color.WHITE);
         paybill.setBorder(BorderFactory.createEmptyBorder(0,0,0,0));
         paybill.setFont(new Font("Tahoma",Font.BOLD,13));
         userMenu.add(paybill);
@@ -147,6 +142,15 @@ public class Project extends JFrame implements Custom,ActionListener {
         generatebill.setBorder(BorderFactory.createEmptyBorder(0,0,0,0));
         generatebill.setFont(new Font("Tahoma",Font.BOLD,13));
         reportMenu.add(generatebill);
+
+        if (atype.equals("Admin")) {
+            menuBar.add(userMenu);
+        } 
+        else {
+            menuBar.add(infoMenu);
+            menuBar.add(userMenu);
+            menuBar.add(reportMenu);
+        }
         
         
         home.setVisible(true);
@@ -155,9 +159,28 @@ public class Project extends JFrame implements Custom,ActionListener {
         home.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
     
-    public void actionPerformed(ActionEvent e)
+    public void actionPerformed(ActionEvent ae)
     {
-        
+        String msg = ae.getActionCommand();
+        if (msg.equals("New Customer")) {
+            new NewCustomer();
+        } else if (msg.equals("Customer Details")) {
+            new CustomerDetails();
+        } else if (msg.equals("Deposit Details")) {
+            new DepositDetails();
+        } else if (msg.equals("Calculate Bill")) {
+            new CalculateBill();
+        } else if (msg.equals("View Information")) {
+            new ViewInformation(meter);
+        } else if (msg.equals("Update Information")) {
+            new UpdateInformation(meter);
+        } else if (msg.equals("Bill Details")) {
+            new BillDetails(meter);
+        } else if (msg.equals("Pay Bill")) {
+            new PayBill(meter);
+        } else if (msg.equals("Generate Bill")) {
+            new GenerateBill();
+        }
     }
     
     public static void main(String[] args) {
