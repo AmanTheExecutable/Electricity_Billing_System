@@ -109,6 +109,7 @@ public class Login extends JFrame implements ActionListener,Custom {
 
                 if (rs.next())
                 {
+                    String meter = rs.getString("meter_no");
                     setVisible(false);
                     new Project(user, meter);
                 }

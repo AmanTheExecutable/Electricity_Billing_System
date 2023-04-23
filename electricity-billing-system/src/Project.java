@@ -140,7 +140,7 @@ public class Project extends JFrame implements Custom, ActionListener {
         reportMenu.add(generatebill);
 
         if (atype.equals("Admin")) {
-            menuBar.add(userMenu);
+            menuBar.add(masterMenu);
         } else {
             menuBar.add(infoMenu);
             menuBar.add(userMenu);
