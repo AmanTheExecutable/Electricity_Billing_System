@@ -37,10 +37,6 @@ public class Project extends JFrame implements Custom, ActionListener {
         masterMenu.setBackground(Color.BLACK);
         masterMenu.setOpaque(true);
         masterMenu.setFont(new Font("Tahoma", Font.BOLD, 20));
-        masterMenu.setBorder(BorderFactory.createEmptyBorder(10, 35, 10, 35));
-        menuBar.add(Box.createHorizontalGlue()); // Pushes the menu to the right
-        menuBar.add(Box.createHorizontalStrut(50));
-        // menuBar.add(masterMenu);
         
         // Create menu items
         JMenuItem newcustomer = new JMenuItem("New Customer");
@@ -77,10 +73,7 @@ public class Project extends JFrame implements Custom, ActionListener {
         infoMenu.setBackground(Color.BLACK);
         infoMenu.setOpaque(true);
         infoMenu.setFont(new Font("Tahoma", Font.BOLD, 20));
-        infoMenu.setBorder(BorderFactory.createEmptyBorder(10, 50, 10, 50));
-        menuBar.add(Box.createHorizontalGlue()); // Pushes the menu to the right
-        menuBar.add(Box.createHorizontalStrut(50));
-        // menuBar.add(infoMenu);
+        
         
         // Create menu items
         JMenuItem updateinformation = new JMenuItem("Update Information");
@@ -103,10 +96,7 @@ public class Project extends JFrame implements Custom, ActionListener {
         userMenu.setBackground(Color.BLACK);
         userMenu.setOpaque(true);
         userMenu.setFont(new Font("Tahoma", Font.BOLD, 20));
-        userMenu.setBorder(BorderFactory.createEmptyBorder(10, 50, 10, 50));
-        menuBar.add(Box.createHorizontalGlue());
-        menuBar.add(Box.createHorizontalStrut(50));
-        // menuBar.add(userMenu);
+        
         
         JMenuItem paybill = new JMenuItem("Pay Bill");
         paybill.addActionListener(this);
@@ -128,10 +118,6 @@ public class Project extends JFrame implements Custom, ActionListener {
         reportMenu.setBackground(Color.BLACK);
         reportMenu.setOpaque(true);
         reportMenu.setFont(new Font("Tahoma", Font.BOLD, 20));
-        reportMenu.setBorder(BorderFactory.createEmptyBorder(10, 35, 10, 35));
-        menuBar.add(Box.createHorizontalGlue());
-        menuBar.add(Box.createHorizontalStrut(50));
-        // menuBar.add(reportMenu);
         
         JMenuItem generatebill = new JMenuItem("Generate Bill");
         generatebill.addActionListener(this);
@@ -140,10 +126,24 @@ public class Project extends JFrame implements Custom, ActionListener {
         reportMenu.add(generatebill);
         
         if (atype.equals("Admin")) {
+            masterMenu.setBorder(BorderFactory.createEmptyBorder(10, 35, 10, 35));
+            menuBar.add(Box.createHorizontalGlue()); // Pushes the menu to the right
+            menuBar.add(Box.createHorizontalStrut(50));
             menuBar.add(masterMenu);
         } else {
+            infoMenu.setBorder(BorderFactory.createEmptyBorder(10, 50, 10, 50));
+            menuBar.add(Box.createHorizontalGlue()); // Pushes the menu to the right
+            menuBar.add(Box.createHorizontalStrut(50));
             menuBar.add(infoMenu);
+            
+            userMenu.setBorder(BorderFactory.createEmptyBorder(10, 50, 10, 50));
+            menuBar.add(Box.createHorizontalGlue());
+            menuBar.add(Box.createHorizontalStrut(50));
             menuBar.add(userMenu);
+            
+            reportMenu.setBorder(BorderFactory.createEmptyBorder(10, 35, 10, 35));
+            menuBar.add(Box.createHorizontalGlue());
+            menuBar.add(Box.createHorizontalStrut(50));
             menuBar.add(reportMenu);
         }
         
@@ -175,7 +175,7 @@ public class Project extends JFrame implements Custom, ActionListener {
             new GenerateBill(meter);
         }
     }
-
+    
     public static void main(String[] args) {
         new Project("", "");
     }
