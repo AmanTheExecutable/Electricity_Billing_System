@@ -7,7 +7,7 @@ public class Conn {
     Conn() {
         // create the connection
         try {
-            // Class.forName("com.mysql.cj.jdbc.Driver"); // load the driver
+            Class.forName("com.mysql.cj.jdbc.Driver"); // load the driver
             c = DriverManager.getConnection("jdbc:mysql://localhost:3306/ebsystem", "root", "root");
             s = c.createStatement(); // create statement object to execute queries
         } catch (Exception e) {
