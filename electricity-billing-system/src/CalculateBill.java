@@ -154,12 +154,8 @@ public class CalculateBill extends JFrame implements ActionListener {
                 ResultSet rs = c.s.executeQuery(query);
 
                 while (rs.next()) {
-                    totalbill += unit_consumed * Integer.parseInt(rs.getString("cost_per_unit"));
-                    totalbill += Integer.parseInt(rs.getString("meter_rent"));
-                    totalbill += Integer.parseInt(rs.getString("service_charge"));
-                    totalbill += Integer.parseInt(rs.getString("service_tax"));
-                    totalbill += Integer.parseInt(rs.getString("swacch_bharat_cess"));
-                    totalbill += Integer.parseInt(rs.getString("fixed_tax"));
+                    totalbill = totalbill + unit_consumed * Integer.parseInt(rs.getString("cost_per_unit"));
+                    totalbill = totalbill + Integer.parseInt(rs.getString("fixed_tax"));
                 }
             } catch (Exception e) {
                 e.printStackTrace();
