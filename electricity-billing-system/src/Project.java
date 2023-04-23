@@ -40,13 +40,8 @@ public class Project extends JFrame implements Custom, ActionListener {
         masterMenu.setBorder(BorderFactory.createEmptyBorder(10, 35, 10, 35));
         menuBar.add(Box.createHorizontalGlue()); // Pushes the menu to the right
         menuBar.add(Box.createHorizontalStrut(50));
-<<<<<<< Updated upstream
-        menuBar.add(masterMenu);
-
-=======
         // menuBar.add(masterMenu);
         
->>>>>>> Stashed changes
         // Create menu items
         JMenuItem newcustomer = new JMenuItem("New Customer");
         newcustomer.addActionListener(this);
@@ -85,13 +80,8 @@ public class Project extends JFrame implements Custom, ActionListener {
         infoMenu.setBorder(BorderFactory.createEmptyBorder(10, 50, 10, 50));
         menuBar.add(Box.createHorizontalGlue()); // Pushes the menu to the right
         menuBar.add(Box.createHorizontalStrut(50));
-<<<<<<< Updated upstream
-        menuBar.add(infoMenu);
-
-=======
         // menuBar.add(infoMenu);
         
->>>>>>> Stashed changes
         // Create menu items
         JMenuItem updateinformation = new JMenuItem("Update Information");
         updateinformation.addActionListener(this);
