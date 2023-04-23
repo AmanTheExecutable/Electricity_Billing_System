@@ -5,7 +5,7 @@ import java.awt.event.*;
 public class Project extends JFrame implements Custom,ActionListener {
     JFrame home;
     String atype, meter;
-    Project()
+    Project(String atype, String meter)
     {
         home = new JFrame("Electricity Billing System");
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
@@ -165,25 +165,25 @@ public class Project extends JFrame implements Custom,ActionListener {
         if (msg.equals("New Customer")) {
             new NewCustomer();
         } else if (msg.equals("Customer Details")) {
-            new CustomerDetails();
+            // new CustomerDetails();
         } else if (msg.equals("Deposit Details")) {
-            new DepositDetails();
+            // new DepositDetails();
         } else if (msg.equals("Calculate Bill")) {
             new CalculateBill();
         } else if (msg.equals("View Information")) {
-            new ViewInformation(meter);
+            // new ViewInformation(meter);
         } else if (msg.equals("Update Information")) {
             new UpdateInformation(meter);
         } else if (msg.equals("Bill Details")) {
-            new BillDetails(meter);
+            // new BillDetails(meter);
         } else if (msg.equals("Pay Bill")) {
             new PayBill(meter);
         } else if (msg.equals("Generate Bill")) {
-            new GenerateBill();
+            // new GenerateBill();
         }
     }
     
     public static void main(String[] args) {
-        new Project();
+        new Project("", "");
     }
 }
