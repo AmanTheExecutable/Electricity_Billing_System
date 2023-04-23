@@ -1,5 +1,7 @@
 {
-    "java.project.sourcePaths": ["src"],
+    "java.project.sourcePaths": [
+        "src"
+    ],
     "java.project.outputPath": "bin",
     "java.project.referencedLibraries": {
         "include": [
@@ -9,5 +11,8 @@
         "exclude": [
             "c:\\Users\\Abhinav Aditya\\Downloads\\mysql-connector-java-8.0.28.jar"
         ]
-    }
+    },
+    "githubPullRequests.ignoredPullRequestBranches": [
+        "main"
+    ]
 }
