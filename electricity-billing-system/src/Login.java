@@ -105,7 +105,7 @@ public class Login extends JFrame implements ActionListener,Custom {
                 Conn c = new Conn();
                 String query = "select * from login where username = '" + susername + "' and password = '" + spassword + "' and user = '" + user + "'";
 
-                ResultSet rs = c.s.executeQuery(query);
+                ResultSet rs = c.s.executeQuery(query); // Execute the query and store the result in ResultSet rs object
 
                 if (rs.next())
                 {
@@ -116,6 +116,8 @@ public class Login extends JFrame implements ActionListener,Custom {
                 else
                 {
                     JOptionPane.showMessageDialog(null, "Invalid Login");
+                    txtusername.setText("");
+                    txtpassword.setText("");
                 }
             }
             catch (Exception e) {
