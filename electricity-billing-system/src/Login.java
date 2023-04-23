@@ -1,10 +1,13 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.sql.*;
 
 public class Login extends JFrame implements ActionListener,Custom {
     
     JButton btnlogin,btncancel,btnsignup;
+    JTextField txtusername,txtpassword;
+    Choice logginin;
     Login()
     {
         super("Login");
@@ -18,10 +21,10 @@ public class Login extends JFrame implements ActionListener,Custom {
         JLabel lblloginas = new JLabel("Login As");
 
         // Create Text Fields for username and password
-        JTextField txtusername = new JTextField();
-        JPasswordField txtpassword = new JPasswordField();
+        txtusername = new JTextField();
+        txtpassword = new JTextField();
 
-        Choice logginin = new Choice();
+        logginin = new Choice();
         logginin.add("Admin");
         logginin.add("Customer");
 
@@ -94,7 +97,29 @@ public class Login extends JFrame implements ActionListener,Custom {
     {
         if (ae.getSource() == btnlogin)
         {
-            
+            String susername = txtusername.getText();
+            String spassword = txtpassword.getText();
+            String user = logginin.getSelectedItem();
+
+            try {
+                Conn c = new Conn();
+                String query = "select * from login where username = '" + susername + "' and password = '" + spassword + "' and user = '" + user + "'";
+
+                ResultSet rs = c.s.executeQuery(query);
+
+                if (rs.next())
+                {
+                    setVisible(false);
+                    new Project(user, meter);
+                }
+                else
+                {
+                    JOptionPane.showMessageDialog(null, "Invalid Login");
+                }
+            }
+            catch (Exception e) {
+                System.out.println(e);
+            }
         }
         else if (ae.getSource() == btncancel)
         {
