@@ -125,11 +125,25 @@ public class Project extends JFrame implements Custom, ActionListener {
         generatebill.setFont(new Font("Tahoma", Font.BOLD, 13));
         reportMenu.add(generatebill);
 
+        JButton signout = new JButton("SIGNOUT");
+        signout.setForeground(Color.WHITE);
+        signout.setBackground(Color.BLACK);
+        signout.setOpaque(true);
+        signout.setFont(new Font("Tahoma", Font.BOLD, 20));
+        signout.addActionListener(this);
+        signout.setBounds(screenSize.width-250,50,200,50);
+        signout.setBorderPainted(false);
+
         if (atype.equals("Admin")) {
             masterMenu.setBorder(BorderFactory.createEmptyBorder(10, 35, 10, 35));
             menuBar.add(Box.createHorizontalGlue()); // Pushes the menu to the right
             menuBar.add(Box.createHorizontalStrut(50));
             menuBar.add(masterMenu);
+            
+            signout.setBorder(BorderFactory.createEmptyBorder(10, 15, 10, 15));
+            menuBar.add(Box.createHorizontalGlue());
+            menuBar.add(Box.createHorizontalStrut(50));
+            image.add(signout);
         } else {
             infoMenu.setBorder(BorderFactory.createEmptyBorder(10, 50, 10, 50));
             menuBar.add(Box.createHorizontalGlue()); // Pushes the menu to the right
@@ -145,6 +159,11 @@ public class Project extends JFrame implements Custom, ActionListener {
             menuBar.add(Box.createHorizontalGlue());
             menuBar.add(Box.createHorizontalStrut(50));
             menuBar.add(reportMenu);
+
+            signout.setBorder(BorderFactory.createEmptyBorder(10, 15, 10, 15));
+            menuBar.add(Box.createHorizontalGlue());
+            menuBar.add(Box.createHorizontalStrut(50));
+            image.add(signout);
         }
 
         home.setVisible(true);
@@ -173,7 +192,11 @@ public class Project extends JFrame implements Custom, ActionListener {
             new PayBill(meter);
         } else if (msg.equals("Generate Bill")) {
             new GenerateBill(meter);
+        } else if (msg.equals("SIGNOUT")) {
+            home.dispose();
+            new Login();
         }
+        
     }
 
     public static void main(String[] args) {
